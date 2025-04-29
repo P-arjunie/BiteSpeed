@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: asnsigs-delivery-service  # Name of the service
+spec:
+  type: NodePort  # Exposes the service to external traffic
+  selector:
+    app: asnsigs-delivery-service  # Ties the service to the pods with this label
+  ports:
+    - port: 3000  # Port the service will listen on inside the cluster
+      targetPort: 3000  # Port on the container to forward the request to
+      nodePort: 30081  # Unique external port to avoid conflict
