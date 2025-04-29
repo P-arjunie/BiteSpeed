@@ -27,7 +27,7 @@ const AddVehicle = () => {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch('https://driver-service-3k84.onrender.com/api/drivers/vehicle/add', {
+      const res = await fetch('https://localhost:30080/api/drivers/vehicle/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ const AddVehicle = () => {
 
   const fetchVehicles = async () => {
     try {
-      const res = await fetch('https://driver-service-3k84.onrender.com/api/drivers/vehicle/my-vehicles', {
+      const res = await fetch('https://localhost:30080/api/drivers/vehicle/my-vehicles', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

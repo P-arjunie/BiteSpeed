@@ -26,7 +26,7 @@ const DriverRegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('https://driver-service-3k84.onrender.com/api/drivers/register', {
+      const res = await fetch('https://localhost:30080/api/drivers/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

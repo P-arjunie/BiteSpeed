@@ -17,7 +17,7 @@ const OrderSummary = () => {
     if (restaurantId) { // Check if restaurantId exists
       const fetchRestaurantDetails = async () => {
         try {
-          const response = await axios.get(`https://restaurant-management-service.onrender.com/api/restaurant/${restaurantId}`);
+          const response = await axios.get(`https://localhost:30082/api/restaurant/${restaurantId}`);
           if (response.status === 200) {
             setRestaurant(response.data);
           }
@@ -60,7 +60,7 @@ const OrderSummary = () => {
           status: "Pending"
         };
   
-        const response = await axios.post("https://ordermanagementservice.onrender.com/api/orders/", orderData);
+        const response = await axios.post("https://localhost:30086/api/orders/", orderData);
   
         if (response.status === 200 || response.status === 201) {
           console.log("Order placed successfully for:", item.name);

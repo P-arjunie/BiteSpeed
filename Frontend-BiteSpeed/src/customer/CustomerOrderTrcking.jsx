@@ -39,7 +39,7 @@ const CustomerOrderTracking = () => {
     setLoading(true);
     try {
       // Fetch order details from API
-      const response = await axios.get(`https://ordermanagementservice.onrender.com/api/orders/${orderId}`);
+      const response = await axios.get(`https://localhost:30086/api/orders/${orderId}`);
       
       // Set initial order data without status (will come from Firebase)
       const orderData = response.data;

@@ -4,7 +4,7 @@ const OrdersTable = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch('https://ordermanagementservice.onrender.com/api/orders/')
+    fetch('https://localhost:30086/api/orders/')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

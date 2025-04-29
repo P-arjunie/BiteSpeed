@@ -34,7 +34,7 @@ const CustomerProfile = () => {
         return;
       }
       
-      const response = await fetch('https://customer-service-lqm4.onrender.com/api/customers/profile', {
+      const response = await fetch('https://localhost:30085/api/customers/profile', {
         method: 'GET',
         headers: {
           'Authorization': token,
@@ -106,7 +106,7 @@ const CustomerProfile = () => {
         return;
       }
       
-      const response = await fetch('https://customer-service-lqm4.onrender.com/api/customers/profile', {
+      const response = await fetch('https://localhost:30085/api/customers/profile', {
         method: 'PUT',
         headers: {
           'Authorization': token,

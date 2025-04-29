@@ -5,7 +5,7 @@ const OrderSummaryPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://ordermanagementservice.onrender.com/api/orders/')
+    fetch('https://localhost:30086/api/orders/')
       .then(res => res.json())
       .then(data => {
         setOrder(data[0]); // Fetch the first order

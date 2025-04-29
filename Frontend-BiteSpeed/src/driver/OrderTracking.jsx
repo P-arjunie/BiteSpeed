@@ -145,7 +145,7 @@ const OrderTracking = () => {
       });
 
       await axios.patch(
-        `https://ordermanagementservice.onrender.com/api/orders/${order._id}/update-status`,
+        `https://localhost:30086/api/orders/${order._id}/update-status`,
         { status: 'PickUp' }
       );
 
@@ -170,7 +170,7 @@ const OrderTracking = () => {
       });
 
       await axios.patch(
-        `https://ordermanagementservice.onrender.com/api/orders/${order._id}/update-status`,
+        `https://localhost:30086/api/orders/${order._id}/update-status`,
         { status: 'Delivered' }
       );
 

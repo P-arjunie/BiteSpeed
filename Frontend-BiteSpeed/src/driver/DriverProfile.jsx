@@ -12,7 +12,7 @@ const DriverProfile = () => {
     const fetchProfile = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch("https://driver-service-3k84.onrender.com/api/drivers/profile/me", {
+        const res = await fetch("https://localhost:30080/api/drivers/profile/me", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -35,7 +35,7 @@ const DriverProfile = () => {
     const fetchVehicle = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch("https://driver-service-3k84.onrender.com/api/drivers/vehicle/my-vehicles", {
+        const res = await fetch("https://localhost:30080/api/drivers/vehicle/my-vehicles", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -52,7 +52,7 @@ const FindOrders = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const res = await axios.post('https://assigns-delivery.onrender.com/api/orders/get-nearby-orders');
+      const res = await axios.post('https://localhost:30081/api/orders/get-nearby-orders');
       if (res.data.orders) {
         setOrders(res.data.orders);
         setMessage('');
@@ -69,7 +69,7 @@ const FindOrders = () => {
   const fetchVehicle = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('https://driver-service-3k84.onrender.com/api/drivers/vehicle/my-vehicles', {
+      const res = await fetch('https://localhost:30080/api/drivers/vehicle/my-vehicles', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -89,7 +89,7 @@ const FindOrders = () => {
   const fetchDriverProfile = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('https://driver-service-3k84.onrender.com/api/drivers/profile/me', {
+      const res = await fetch('https://localhost:30080/api/drivers/profile/me', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -174,7 +174,7 @@ const FindOrders = () => {
       
       // Step 1: Assign the driver
       await axios.patch(
-        `https://ordermanagementservice.onrender.com/api/orders/${orderId}/assign-driver`,
+        `https://localhost:30086/api/orders/${orderId}/assign-driver`,
         {
           driverId: driver._id,
           driverName: driver.name,
@@ -183,7 +183,7 @@ const FindOrders = () => {
 
       // Step 2: Update status to 'Out For Delivery'
       await axios.patch(
-        `https://ordermanagementservice.onrender.com/api/orders/${orderId}/update-status`,
+        `https://localhost:30086/api/orders/${orderId}/update-status`,
         {
           status: 'Assigned',
         }

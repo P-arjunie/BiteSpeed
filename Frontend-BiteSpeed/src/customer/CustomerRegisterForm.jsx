@@ -25,7 +25,7 @@ const CustomerRegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('https://customer-service-lqm4.onrender.com/api/customers/register', {
+      const res = await fetch('https://localhost:30085/api/customers/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
