@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: restaurant-service  # Name of the service
+spec:
+  type: NodePort  # Exposes the service to external traffic
+  selector:
+    app: restaurant-service  # Ties the service to the pods with this label
+  ports:
+    - port: 3001  # Port the service will listen on inside the cluster
+      targetPort: 3001  # Port on the container to forward the request to
+      nodePort: 30081  # Port on the machine to expose (external port)

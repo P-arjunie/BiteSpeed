@@ -1,0 +1,25 @@
+{
+  "name": "restaurant-management-service",
+  "version": "1.0.0",
+  "description": "restaurant management service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Chanugi",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "cloudinary": "^1.41.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.13.1",
+    "multer": "^1.4.5-lts.2",
+    "multer-storage-cloudinary": "^4.0.0",
+    "node-fetch": "^2.6.7",
+    "nodemon": "^3.1.9"
+  }
+}
