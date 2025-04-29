@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restaurant-service-deployment  # The name of your deployment
+spec:
+  replicas: 1  # The number of instances (pods) of the user-service to run
+  selector:
+    matchLabels:
+      app: restaurant-service  # This ensures that only the correct pods are managed by this deployment
+  template:
+    metadata:
+      labels:
+        app: restaurant-service  # Labels to identify this pod
+    spec:
+      containers:
+      - name: restaurant-service  # The name of the container
+        image: restaurant-service:latest  # Docker image to be used for this container
+        imagePullPolicy: Never  # <<< ADD THIS LINE
+        ports:
+        - containerPort: 3001  # Expose port 3000 inside the container
