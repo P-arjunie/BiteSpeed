@@ -59,7 +59,7 @@ const loginDriver = async (req, res) => {
         const { email, password } = req.body;
 
         // Send email & password to auth-service for login
-        const authResponse = await axios.post("http://auth-service:5002/api/auth/login", { email, password });
+        const authResponse = await axios.post("https://localhost:30084/api/auth/login", { email, password });
 
         if (authResponse.status === 200) {
             const token = authResponse.data.token;
