@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: notification-service  # Name of the service
+spec:
+  type: NodePort  # Exposes the service to external traffic
+  selector:
+    app: notification-service  # Ties the service to the pods with this label
+  ports:
+    - port: 3003  # Port the service will listen on inside the cluster
+      targetPort: 3003  # Port on the container to forward the request to
+      nodePort: 30083  # Port on the machine to expose (external port)
