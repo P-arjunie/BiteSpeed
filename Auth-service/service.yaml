@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-service  # Name of the service
+spec:
+  type: NodePort  # Exposes the service to external traffic
+  selector:
+    app: auth-service  # Ties the service to the pods with this label
+  ports:
+    - port: 3004  # Port the service will listen on inside the cluster
+      targetPort: 3004  # Port on the container to forward the request to
+      nodePort: 30084  # Port on the machine to expose (external port)
