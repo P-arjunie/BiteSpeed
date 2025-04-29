@@ -29,7 +29,7 @@ const registerDriver = async (req, res) => {
 
         // Register with the auth service
         const role = "driver";
-        const authRes = await fetch('https://auth-service-2-4xm3.onrender.com/api/auth/register', {
+        const authRes = await fetch('https://localhost:30084/api/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password, role })
