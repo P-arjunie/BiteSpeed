@@ -17,4 +17,4 @@ spec:
         image: restaurant-service:latest  # Docker image to be used for this container
         imagePullPolicy: Never  # <<< ADD THIS LINE
         ports:
-        - containerPort: 3001  # Expose port 3000 inside the container
+        - containerPort: 3000  # Expose port 3000 inside the container
